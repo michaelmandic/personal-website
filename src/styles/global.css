@@ -1,6 +1,64 @@
 @import "tailwindcss";
 
 @theme {
-	--color-off-white: #eee;
+  --font-display: "IBM Plex Sans", sans-serif;
+  --font-text: "Inter", sans-serif;
+  --color-off-white: #eee;
   --color-off-black: #161616;
+  --color-green-1: #EBFFE2;
+  --color-green-2: #C0FFA6;
+  --color-green-3: #4BF678;
+  --color-green-4: #00C777;
+  --color-green-5: #007F60;
+  --color-green-6: #003A2C;
+  --color-green-7: #04211A;
+  --color-gray-1: #E3E3E3;
+  --color-gray-2: #AEAEAE;
+  --color-gray-3: #5F5F5F;
+  --color-gray-4: #2E2E2E;
+}
+
+
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: var(--color-off-white);
+  color: black;
+
+  @variant dark {
+    background-color: var(--color-off-black);
+    color: white;
+  }
+}
+
+.content-wrapper {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+  letter-spacing: -0.05em;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }

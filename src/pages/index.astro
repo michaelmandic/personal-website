@@ -1,8 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout />
+<BaseLayout>
+  <main>
+    <h1 class="mb-2">Michael Mandic</h1>
+    <p class="text-2xl text-green-3 font-display tracking-tight mb-8">
+      Software engineer based in Belgrade,<br />citizen of Serbia and the EU
+    </p>
+    <p>
+      Hi, I’m Michael Mandic, a software engineering student @ University of
+      Belgrade, School of Electrical Engineering.<br /><br />I'm passionate
+      about computer science and full-stack development and I’m eager to
+      contribute to real-world projects and gain industry experience.
+    </p>
+  </main>
+</BaseLayout>
