@@ -3,8 +3,8 @@
 @theme {
   --font-display: "IBM Plex Sans", sans-serif;
   --font-text: "Inter", sans-serif;
-  --color-off-white: #eee;
-  --color-off-black: #161616;
+  --color-off-white: #f4f3f2;
+  --color-off-black: hsl(0, 0%, 8%);
   --color-green-1: #EBFFE2;
   --color-green-2: #C0FFA6;
   --color-green-3: #4BF678;
@@ -61,4 +61,14 @@ h1 {
 
 h2 {
   font-size: 2rem;
+}
+
+::selection {
+  background-color: var(--color-green-5);
+  color: white;
+
+  @variant dark {
+    background-color: var(--color-green-3);
+    color: black;
+  }
 }
