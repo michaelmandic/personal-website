@@ -25,6 +25,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  text-wrap: balance;
 
   background-color: var(--color-off-white);
   color: black;
