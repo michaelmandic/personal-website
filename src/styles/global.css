@@ -3,6 +3,7 @@
 @theme {
   --font-display: "IBM Plex Sans", sans-serif;
   --font-text: "Inter", sans-serif;
+  --font-legible: "Atkinson Hyperlegible Next", sans-serif;
   --color-off-white: #f4f3f2;
   --color-off-black: hsl(0, 0%, 8%);
   --color-green-1: #EBFFE2;
@@ -21,7 +22,7 @@
 
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-text);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -42,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--font-legible);
   letter-spacing: -0.05em;
   font-optical-sizing: auto;
   font-weight: 500;
