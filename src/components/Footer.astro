@@ -1,21 +1,16 @@
+---
+import Logo from "../assets/mlogomonochrome.svg";
+
+const currentYear = new Date().getFullYear();
+---
+
 <footer class="mt-10 text-black/25 dark:text-white/25 font-legible">
   <hr class="text-black/25 dark:text-white/25" />
-  <div class="flex items-center justify-between py-3 gap-3">
-    <div>
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 7 6"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M2 1H3V2H4V1H5V0H7V6H5V4H4V5H3V4H2V6H0V0H2V1Z"
-          fill="currentColor"></path>
-      </svg>
-    </div>
-    <small class="text-end text- text-sm"
-      >©2025 Michael Mandic. All rights reserved.</small
+  <div class="flex items-start justify-between py-3 gap-3">
+    <Logo width={20} height={20} class="flex-none" />
+    <small class="text-end text-sm"
+      >© {currentYear} Michael Mandic. Code licensed under MIT. Logo and branding
+      are proprietary.</small
     >
   </div>
 </footer>

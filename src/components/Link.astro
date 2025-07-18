@@ -1,0 +1,28 @@
+---
+import RightArrow from "../assets/rightarrow.svg";
+
+const {
+  href = "#",
+  text,
+  target: targetName = "_self",
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class={`inline-flex items-center group gap-1 ${className}`}
+  {...rest}
+  target={targetName}
+>
+  <span
+    class="group-hover:text-green-5 dark:group-hover:text-green-3 transition-colors"
+    >{text}</span
+  >
+  <RightArrow
+    width={16}
+    height={16}
+    class="text-green-5 transform transition-transform dark:text-green-3 group-hover:translate-x-1"
+  />
+</a>

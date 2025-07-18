@@ -1,22 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Link from "../components/Link.astro";
 ---
 
 <BaseLayout pageTitle="Michael Mandic">
   <p
-    class="font-legible text-2xl text-green-5 dark:text-green-3 tracking-tight mb-8 font-normal text-balance"
+    class="font-legible text-2xl text-green-5 dark:text-green-3 tracking-tight mb-6 font-normal text-balance"
   >
     Software engineer based in Belgrade, citizen of Serbia and the EU
   </p>
-  <p
-    class="dark:text-white/75 text-black/75 text-lg text-balance mb-4 font-legible"
-  >
+  <div class="flex flex-wrap gap-6 mb-6">
+    <Link
+      href="https://www.linkedin.com/in/michael-mandic/"
+      text="LinkedIn"
+      target="_blank"
+    />
+    <Link
+      href="https://github.com/michaelmandic"
+      text="GitHub"
+      target="_blank"
+    />
+  </div>
+  <p class="dark:text-white/75 text-black/75 text-lg text-balance mb-4">
     Hi, I’m Michael Mandic, a software engineering student @ University of
     Belgrade, School of Electrical Engineering.
   </p>
-  <p
-    class="dark:text-white/75 text-black/75 text-lg text-balance mb-4 font-legible"
-  >
+  <p class="dark:text-white/75 text-black/75 text-lg text-balance mb-4">
     I'm passionate about computer science and full-stack development and I’m
     eager to contribute to real-world projects and gain industry experience.
   </p>
