@@ -1,17 +1,24 @@
 ---
 import DarkLogo from "../assets/mlogodark.svg";
 import LightLogo from "../assets/mlogolight.svg";
+import Link from "./Link.astro";
 ---
 
-<nav
-  class="w-full flex flex-row justify-between items-center py-3 md:py-5 font-display"
->
-  <div id="nav-links">
+<nav class="w-full flex flex-row justify-between items-center py-3 md:py-5">
+  <div id="nav-links" class="flex flex-row gap-6 items-center">
     <a id="logo" href="/">
       <DarkLogo width={42} height={42} class="dark:hidden" />
-      <LightLogo width={42} height={42} class="hidden dark:inline" />
+      <LightLogo
+        width={42}
+        height={42}
+        class="hidden dark:inline hover:opacity-50 hover:scale-90 transition-all"
+      />
     </a>
-    <ol></ol>
+    <ol class="flex flex-row gap-6 items-center">
+      <li>
+        <Link text="Links" href="/links" />
+      </li>
+    </ol>
   </div>
   <div id="nav-icons"></div>
 </nav>

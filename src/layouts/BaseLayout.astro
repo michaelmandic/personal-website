@@ -24,7 +24,14 @@ const { pageTitle } = Astro.props;
 		<div class="content-wrapper max-w-3xl mx-auto px-4">
 			<NavBar />
 			<main class="mt-10">
-				<h1 class="mb-2">{pageTitle}</h1>
+				<h1 class="mb-2 relative group" id={pageTitle}>
+					<a
+						href={`#${pageTitle}`}
+						class="absolute md:inline hidden -left-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-25 hover:opacity-100 hover:text-green-5 dark:hover:text-green-3 transition-all font-light hover:font-bold hover:-left-11"
+						aria-label="Link to this heading">#</a
+					>
+					{pageTitle}
+				</h1>
 				<slot />
 			</main>
 			<Footer />
