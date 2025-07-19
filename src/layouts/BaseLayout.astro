@@ -2,8 +2,10 @@
 import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
+import HeadingLink from "../components/HeadingLink.astro";
 
 const { pageTitle } = Astro.props;
+const titleId = pageTitle.replace(/\s+/g, "-").toLowerCase();
 ---
 
 <html lang="en">
@@ -21,15 +23,11 @@ const { pageTitle } = Astro.props;
 		<title>Michael Mandic</title>
 	</head>
 	<body class="">
-		<div class="content-wrapper max-w-3xl mx-auto px-4">
+		<div class="max-w-3xl mx-auto px-4">
 			<NavBar />
-			<main class="mt-10">
-				<h1 class="mb-2 relative group" id={pageTitle}>
-					<a
-						href={`#${pageTitle}`}
-						class="absolute md:inline hidden -left-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-25 hover:opacity-100 hover:text-green-5 dark:hover:text-green-3 transition-all font-light hover:font-bold hover:-left-11"
-						aria-label="Link to this heading">#</a
-					>
+			<main class="mt-30">
+				<h1 class="heading group" id={titleId}>
+					<HeadingLink idName={titleId} />
 					{pageTitle}
 				</h1>
 				<slot />

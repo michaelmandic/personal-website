@@ -1,0 +1,9 @@
+---
+const { idName = "" } = Astro.props;
+---
+
+<a
+  href={`#${idName}`}
+  class="absolute md:inline hidden top-1/2 translate-x-0 right-full pr-2 -translate-y-1/2 opacity-0 group-hover:opacity-25 hover:opacity-100 hover:text-green-5 dark:hover:text-green-3 transition-all font-light hover:font-bold"
+  aria-label="Link to this heading">#</a
+>

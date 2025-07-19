@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
+import HeadingLink from "../components/HeadingLink.astro";
 ---
 
 <BaseLayout pageTitle="Michael Mandic">
@@ -29,9 +30,13 @@ import Link from "../components/Link.astro";
     I'm passionate about computer science and full-stack development and eager
     to contribute to real-world projects and gain industry experience.
   </p>
-  <h2>Skills and Tech Stack</h2>
+  <h2 id="skills-and-tech-stack" class="heading group">
+    <HeadingLink idName="skills-and-tech-stack" />Skills & Tech Stack
+  </h2>
   <p class="paragraph">Under construction.</p>
-  <h2>Get in Touch</h2>
+  <h2 id="get-in-touch" class="heading group">
+    <HeadingLink idName="get-in-touch" />Get in Touch
+  </h2>
   <p class="paragraph">
     You can reach me at <a href="mailto:hey@builtbymike.dev" class="link"
       >hey@builtbymike.dev</a
