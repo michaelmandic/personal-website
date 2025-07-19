@@ -5,21 +5,10 @@ import Link from "./Link.astro";
 ---
 
 <nav
-  class="w-full flex flex-row justify-between items-center py-3 md:py-5 fixed top-0 z-[8888]"
+  id="navbar"
+  class="w-full py-3 md:py-5 dark:shadow-off-black shadow-off-white shadow-2xl/100 fixed left-0 top-0 z-[9999] transition-all border-b-1 border-transparent bg-off-white dark:bg-off-black"
 >
-  <div
-    class="h-25 fixed w-full top-0 left-0 backdrop-blur-sm mask-to-t z-[7777]"
-  >
-  </div>
-  <div
-    class="h-25 fixed w-full top-0 left-0 backdrop-blur-sm mask-to-t z-[7777]"
-  >
-  </div>
-  <div
-    class="h-30 fixed w-full top-0 left-0 backdrop-blur-sm mask-to-t z-[7777]"
-  >
-  </div>
-  <div class="z-[9999]">
+  <div class="max-w-3xl flex flex-row justify-between items-center m-auto px-4">
     <div id="nav-links" class="flex flex-row gap-6 items-center">
       <a id="logo" href="/">
         <DarkLogo width={42} height={42} class="dark:hidden" />
@@ -38,3 +27,13 @@ import Link from "./Link.astro";
     <div id="nav-icons"></div>
   </div>
 </nav>
+
+<script>
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    navbar?.classList.toggle("border-black/20", window.scrollY > 0);
+    navbar?.classList.toggle("dark:border-white/20", window.scrollY > 0);
+    navbar?.classList.toggle("border-transparent", window.scrollY === 0);
+  });
+</script>
