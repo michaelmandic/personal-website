@@ -7,7 +7,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 
 <nav
   id="navbar"
-  class="w-full py-3 md:py-5 dark:shadow-off-black shadow-off-white shadow-2xl/100 fixed left-0 top-0 z-[9999] transition-opacity border-b-1 border-transparent bg-off-white dark:bg-off-black"
+  class="w-full py-3 md:py-5 dark:shadow-off-black shadow-off-white duration-200 shadow-2xl/100 fixed left-0 top-0 z-[9999] transition-all border-b-1 border-transparent bg-off-white dark:bg-off-black"
 >
   <div class="max-w-3xl flex flex-row justify-between items-center m-auto px-4">
     <div id="nav-links" class="flex flex-row gap-6 items-center">
@@ -39,7 +39,6 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   const navbar = document.getElementById("navbar");
 
   window.addEventListener("scroll", () => {
-    navbar?.classList.toggle("border-transparent", window.scrollY === 0);
     navbar?.classList.toggle("border-black/20", window.scrollY > 0);
     navbar?.classList.toggle("dark:border-white/20", window.scrollY > 0);
   });
