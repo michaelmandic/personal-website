@@ -41,5 +41,6 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   window.addEventListener("scroll", () => {
     navbar?.classList.toggle("border-black/20", window.scrollY > 0);
     navbar?.classList.toggle("dark:border-white/20", window.scrollY > 0);
+    navbar?.classList.toggle("border-transparent", window.scrollY < 1);
   });
 </script>
