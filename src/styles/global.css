@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: "IBM Plex Sans", sans-serif;
   --font-text: "Inter", sans-serif;
   --font-legible: "Atkinson Hyperlegible Next", sans-serif;
-  --color-off-white: #f4f3f2;
-  --color-off-black: hsl(0, 0%, 8%);
+  --color-off-white: hsl(152, 20%, 92%);
+  /*  --color-off-black: hsl(0, 0%, 8%); */
+  --color-off-black: hsl(152, 20%, 8%);
   --color-green-1: #EBFFE2;
   --color-green-2: #C0FFA6;
   --color-green-3: #4BF678;
@@ -125,12 +128,13 @@ h2 {
 
   font-weight: 500;
   text-decoration: underline;
-  text-decoration-thickness: 0.1rem;
+  text-decoration-thickness: 0.05rem;
   text-underline-offset: 0.2rem;
 
   &:hover {
     color: black;
     text-decoration-color: var(--color-green-5);
+    text-decoration-thickness: 0.15rem;
 
     @variant dark {
       color: white;

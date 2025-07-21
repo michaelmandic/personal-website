@@ -12,6 +12,14 @@ const titleId = pageTitle.replace(/\s+/g, "-").toLowerCase();
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<script is:inline>
+			document.documentElement.classList.toggle(
+				"dark",
+				localStorage.theme === "dark" ||
+					(!("theme" in localStorage) &&
+						window.matchMedia("(prefers-color-scheme: dark)").matches),
+			);
+		</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +30,7 @@ const titleId = pageTitle.replace(/\s+/g, "-").toLowerCase();
 		<meta name="generator" content={Astro.generator} />
 		<title>Michael Mandic</title>
 	</head>
-	<body class="">
+	<body>
 		<div class="max-w-3xl mx-auto px-4">
 			<NavBar />
 			<main class="mt-30">
