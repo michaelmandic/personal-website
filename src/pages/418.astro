@@ -12,7 +12,7 @@ import Subtitle from "../components/Subtitle.astro";
     <div
       class="flex gap-2 items-center dark:text-green-2 flex-none text-green-6"
     >
-      <span id="tea-counter" class="text-4xl">0</span>
+      <span id="tea-counter" class="text-4xl transition-all">0</span>
       <svg
         width="24"
         height="24"
@@ -59,9 +59,7 @@ import Subtitle from "../components/Subtitle.astro";
   teaButton?.addEventListener("click", () => {
     teapot = document.createElement("span");
     teapot.innerHTML += teapotVector;
-    teapot.classList.add("opacity-0");
-    teapot.classList.add("transition-all");
-    teapot.classList.add("duration-1000");
+    teapot.classList.add("opacity-0", "transition-all", "duration-1000");
     tea.insertBefore(teapot, tea.firstChild);
 
     counter++;
@@ -70,6 +68,22 @@ import Subtitle from "../components/Subtitle.astro";
     setTimeout(() => {
       tea.firstChild.classList.remove("opacity-0");
     }, 1);
+
+    if (counter >= 100) {
+      teaCounter.classList.remove("text-3xl");
+      teaCounter.classList.add(
+        "text-red-600",
+        "dark:text-red-400",
+        "font-black",
+        "text-4xl",
+      );
+    } else if (counter >= 50) {
+      teaCounter.classList.add(
+        "text-red-700",
+        "dark:text-red-300",
+        "font-bold",
+      );
+    }
   });
 
   console.log("I'm a teapot");
