@@ -6,10 +6,13 @@ import Subtitle from "../components/Subtitle.astro";
 <BaseLayout pageTitle="418">
   <Subtitle class="text- dark:text-red-400" text="Error: I'm a teapot" />
   <p class="paragraph">The requested entity body may be short and stout.</p>
-  <div class="flex items-center justify-between w-full">
-    <button id="tea-button" class="button mt-2">Pour tea</button>
-    <div class="flex gap-2 items-center dark:text-green-2 text-green-6">
-      <span id="tea-counter" class="text-3xl">0</span>
+  <div class="flex items-center justify-between w-full gap-4">
+    <button id="tea-button" class="flex-none button">Pour tea</button>
+    <hr class="flex-1" />
+    <div
+      class="flex gap-2 items-center dark:text-green-2 flex-none text-green-6"
+    >
+      <span id="tea-counter" class="text-4xl">0</span>
       <svg
         width="24"
         height="24"
@@ -29,27 +32,18 @@ import Subtitle from "../components/Subtitle.astro";
   </div>
   <div
     id="tea"
-    class="flex my-8 w-full items-center justify-around flex-col gap-8 dark:text-green-2 text-green-6"
+    class="flex my-8 w-full transition-all items-center justify-around flex-col gap-8 dark:text-green-2 text-green-6"
   >
   </div>
 </BaseLayout>
 
 <style>
   html {
-    cursor: url("../assets/cursors/teapotcursorblack.cur"), auto;
+    cursor: url("../assets/cursors/teapotcursorblack.cur"), auto !important;
   }
 
   html.dark {
-    cursor: url("../assets/cursors/teapotcursorwhite.cur"), auto;
-  }
-
-  #tea span {
-    opacity: 0; /* Start with the tea hidden */
-    transition: opacity 0.5s ease-in-out; /* Add a transition for the opacity */
-  }
-
-  #tea span.visible {
-    opacity: 1; /* Make it visible once the class is added */
+    cursor: url("../assets/cursors/teapotcursorwhite.cur"), auto !important;
   }
 </style>
 
@@ -65,14 +59,17 @@ import Subtitle from "../components/Subtitle.astro";
   teaButton?.addEventListener("click", () => {
     teapot = document.createElement("span");
     teapot.innerHTML += teapotVector;
+    teapot.classList.add("opacity-0");
+    teapot.classList.add("transition-all");
+    teapot.classList.add("duration-1000");
     tea.insertBefore(teapot, tea.firstChild);
 
     counter++;
     teaCounter.textContent = counter;
 
     setTimeout(() => {
-      teapot.classList.add("visible"); // Add the class to trigger the opacity change
-    }, 10);
+      tea.firstChild.classList.remove("opacity-0");
+    }, 1);
   });
 
   console.log("I'm a teapot");

@@ -194,3 +194,7 @@ small {
     }
   }
 }
+
+hr {
+  @apply text-green-7/15 dark:text-green-1/15;
+}
