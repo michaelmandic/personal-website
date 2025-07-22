@@ -2,14 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import HeadingLink from "../components/HeadingLink.astro";
+import Subtitle from "../components/Subtitle.astro";
 ---
 
 <BaseLayout pageTitle="Michael Mandic">
-  <p
-    class="text-2xl text-green-5 dark:text-green-3 tracking-tight mb-6 font-normal text-balance"
-  >
-    Software engineer based in Belgrade, citizen of Serbia and the EU
-  </p>
+  <Subtitle
+    class="text-green-5 dark:text-green-3"
+    text="Software engineer based in Belgrade, citizen of Serbia and the EU"
+  />
   <div class="flex flex-wrap gap-6 mb-6">
     <Link
       href="https://www.linkedin.com/in/michael-mandic/"
@@ -24,17 +24,15 @@ import HeadingLink from "../components/HeadingLink.astro";
   </div>
   <p class="paragraph">
     Hi, I'm Michael Mandic, a software engineering student @ University of
-    Belgrade, School of Electrical Engineering.
+    Belgrade, School of Electrical Engineering. I'm passionate about computer
+    science and full-stack development and eager to contribute to real-world
+    projects and gain industry experience.
   </p>
-  <p class="paragraph">
-    I'm passionate about computer science and full-stack development and eager
-    to contribute to real-world projects and gain industry experience.
-  </p>
-  <h2 id="skills-and-tech-stack" class="heading group">
+  <h2 id="skills-and-tech-stack" class="group">
     <HeadingLink idName="skills-and-tech-stack" />Skills & Tech Stack
   </h2>
   <p class="paragraph">Under construction.</p>
-  <h2 id="get-in-touch" class="heading group">
+  <h2 id="get-in-touch" class="group">
     <HeadingLink idName="get-in-touch" />Get in Touch
   </h2>
   <p class="paragraph">
