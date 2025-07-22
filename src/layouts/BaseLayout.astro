@@ -4,11 +4,11 @@ import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import HeadingLink from "../components/HeadingLink.astro";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, htmlClass, bodyClass, ...rest } = Astro.props;
 const titleId = pageTitle.replace(/\s+/g, "-").toLowerCase();
 ---
 
-<html lang="en">
+<html lang="en" class={htmlClass} {...rest}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -30,7 +30,7 @@ const titleId = pageTitle.replace(/\s+/g, "-").toLowerCase();
 		<meta name="generator" content={Astro.generator} />
 		<title>Michael Mandic</title>
 	</head>
-	<body class="bg-off-white dark:bg-off-black transition-colors duration-200">
+	<body class=`${bodyClass} transition-colors duration-200`>
 		<div class="max-w-4xl mx-auto px-4">
 			<NavBar />
 			<main class="mt-30">

@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Subtitle from "../components/Subtitle.astro";
+---
+
+<BaseLayout pageTitle="418">
+  <Subtitle class="text- dark:text-red-400" text="Error: I'm a teapot" />
+  <p class="paragraph">The requested entity body may be short and stout.</p>
+  <div class="flex items-center justify-between w-full">
+    <button id="tea-button" class="button mt-2">Pour tea</button>
+    <div class="flex gap-2 items-center dark:text-green-2 text-green-6">
+      <span id="tea-counter" class="text-3xl">0</span>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 11 11"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path d="M6 3H7V4H6V3Z" fill="currentColor"></path><path
+          d="M8 3H7V1H8V3Z"
+          fill="currentColor"></path><path d="M4 2H5V3H4V2Z" fill="currentColor"
+        ></path><path d="M4 2H3V0H4V2Z" fill="currentColor"></path><path
+          d="M2 4H1V2H2V4Z"
+          fill="currentColor"></path><path
+          d="M9 6H11V8H10V7H9V8H10V9H7V10H8V11H1V10H2V9H1V8H0V5H9V6Z"
+          fill="currentColor"></path></svg
+      >
+    </div>
+  </div>
+  <div
+    id="tea"
+    class="flex my-8 w-full items-center justify-around flex-col gap-8 dark:text-green-2 text-green-6"
+  >
+  </div>
+</BaseLayout>
+
+<style>
+  html {
+    cursor: url("../assets/cursors/teapotcursorblack.cur"), auto;
+  }
+
+  html.dark {
+    cursor: url("../assets/cursors/teapotcursorwhite.cur"), auto;
+  }
+
+  #tea span {
+    opacity: 0; /* Start with the tea hidden */
+    transition: opacity 0.5s ease-in-out; /* Add a transition for the opacity */
+  }
+
+  #tea span.visible {
+    opacity: 1; /* Make it visible once the class is added */
+  }
+</style>
+
+<script is:inline>
+  const teaButton = document.getElementById("tea-button");
+  const tea = document.getElementById("tea");
+  const teaCounter = document.getElementById("tea-counter");
+
+  let counter = 0;
+
+  const teapotVector = `<svg width="48" height="48" viewBox="0 0 11 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 3H7V4H6V3Z" fill="currentColor" /><path d="M8 3H7V1H8V3Z" fill="currentColor" /><path d="M4 2H5V3H4V2Z" fill="currentColor" /><path d="M4 2H3V0H4V2Z" fill="currentColor" /><path d="M2 4H1V2H2V4Z" fill="currentColor" /><path d="M9 6H11V8H10V7H9V8H10V9H7V10H8V11H1V10H2V9H1V8H0V5H9V6Z" fill="currentColor" /></svg>`;
+
+  teaButton?.addEventListener("click", () => {
+    teapot = document.createElement("span");
+    teapot.innerHTML += teapotVector;
+    tea.insertBefore(teapot, tea.firstChild);
+
+    counter++;
+    teaCounter.textContent = counter;
+
+    setTimeout(() => {
+      teapot.classList.add("visible"); // Add the class to trigger the opacity change
+    }, 10);
+  });
+
+  console.log("I'm a teapot");
+</script>
