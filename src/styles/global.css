@@ -154,6 +154,7 @@ small {
   text-decoration: underline;
   text-decoration-thickness: 0.05rem;
   text-underline-offset: 0.2rem;
+  color: inherit;
 
   &:hover {
     color: black;
