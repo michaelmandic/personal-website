@@ -65,8 +65,7 @@ h6 {
     "wdth" 100;
   scroll-margin-top: 2em;
   line-height: 1.15;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   &:target {
     animation: flash-color ease-out 2s;
