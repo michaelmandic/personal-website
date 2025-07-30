@@ -17,13 +17,23 @@ const size = 20;
 <script>
   const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-  darkModeToggle?.addEventListener("click", () => {
+  function updateTheme() {
     document.documentElement.classList.toggle("dark");
 
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("theme", "dark");
     } else {
       localStorage.setItem("theme", "light");
+    }
+  }
+
+  darkModeToggle?.addEventListener("click", () => {
+    if (!document.startViewTransition) {
+      updateTheme();
+    } else {
+      document.startViewTransition(() => {
+        updateTheme();
+      });
     }
   });
 </script>
