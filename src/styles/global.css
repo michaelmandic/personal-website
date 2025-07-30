@@ -26,27 +26,6 @@
   navigation: auto;
 }
 
-@media (width >=48rem) and (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) {
-    animation-delay: 500ms;
-  }
-
-  ::view-transition-new(root) {
-    animation: circle-in 500ms;
-    animation-timing-function: cubic-bezier(0.34, 1, 0.66, 0);
-  }
-
-  @keyframes circle-in {
-    from {
-      clip-path: circle(0% at 50% 0%);
-    }
-
-    to {
-      clip-path: circle(130% at 50% 0%);
-    }
-  }
-}
-
 
 
 html {
@@ -173,6 +152,8 @@ small {
 .link {
   @apply transition-all;
 
+  display: inline-block;
+
   font-weight: 500;
   text-decoration: underline;
   text-decoration-thickness: 0.05rem;
@@ -180,12 +161,14 @@ small {
   color: inherit;
 
   &:hover {
-    color: black;
+    transform: translateY(-2px);
+
+    color: var(--color-green-5);
     text-decoration-color: var(--color-green-5);
     text-decoration-thickness: 0.15rem;
 
     @variant dark {
-      color: white;
+      color: var(--color-green-3);
       text-decoration-color: var(--color-green-3);
     }
   }
