@@ -22,15 +22,15 @@ if (iconName) {
 ---
 
 <li
-  class="flex bg-green-6/50 border-2 border-green-1/5 rounded-lg md:rounded-xl w-fit py-1 px-2 gap-2 md:py-2 md:px-3 md:gap-3 items-center"
+  class="flex transition-all bg-white dark:bg-green-6 border-2 border-green-5/25 dark:border-green-1/10 rounded-md md:rounded-md w-fit py-1 px-1.5 gap-1.5 md:py-1 md:px-2 md:gap-2 items-center"
 >
   <div
-    class="text-green-2 max-w-4 max-h-4 md:max-w-16 md:max-h-16 flex items-center justify-center"
+    class="text-green-5 dark:text-green-2 max-w-5 max-h-5 md:max-w-7 md:max-h-7 flex items-center justify-center"
   >
     {
       icon ? (
         <svg
-          class=""
+          class="transition-all"
           width={size}
           height={size}
           viewBox="0 0 24 24"
@@ -48,9 +48,9 @@ if (iconName) {
   </div>
 
   <div class="flex flex-col">
-    <span class="description text-[0.5rem] md:text-xs text-green-2/75 leading-3"
+    <span class="description text-[0.6rem] md:text-xs text-green-5 dark:text-green-2/75 leading-3"
       >{description}</span
     >
-    <span class="title text-xs md:text-lg">{title}</span>
+    <span class="title text-sm  md:text-lg leading-4 md:leading-6">{title}</span>
   </div>
 </li>
