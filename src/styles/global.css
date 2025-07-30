@@ -65,7 +65,8 @@ h6 {
     "wdth" 100;
   scroll-margin-top: 2em;
   line-height: 1.15;
-  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 
   &:target {
     animation: flash-color ease-out 2s;
@@ -198,4 +199,8 @@ small {
 
 hr {
   @apply text-green-7/15 dark:text-green-1/15;
+}
+
+.techcard-svg {
+  @apply text-green-2 max-w-4 max-h-4 md:max-w-16 md:max-h-16;
 }

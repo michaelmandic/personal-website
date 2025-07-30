@@ -1,13 +1,21 @@
 ---
 import RightArrow from "../assets/rightarrow.svg";
+import DiagonalArrow from "../assets/diagonalarrow.svg";
 
-const {
+let {
   href = "#",
   text,
-  target: targetName = "_self",
+  type = "external",
+  target: targetName,
   class: className,
   ...rest
 } = Astro.props;
+
+if (type === "external") {
+  targetName ??= "_blank";
+} else {
+  targetName ??= "_self";
+}
 ---
 
 <a
@@ -17,12 +25,29 @@ const {
   target={targetName}
 >
   <span
-    class="group-hover:text-green-5 font-normal text-black dark:text-white text-xl transform dark:group-hover:text-green-3 transition-all group-hover:scale-105"
+    class="group-hover:text-green-5 font-normal text-black dark:text-white text-xl transform dark:group-hover:text-green-3 transition-all"
     >{text}</span
   >
-  <RightArrow
-    width={16}
-    height={16}
-    class="text-green-6 transform transition-all dark:text-green-2 group-hover:translate-x-1 group-hover:scale-115 group-hover:text-green-5 dark:group-hover:text-green-3"
-  />
+  <div
+    class="text-green-5 transform transition-all dark:text-green-2 group-hover:scale-115 group-hover:text-green-5 dark:group-hover:text-green-3 h-4 w-4 flex justify-center items-center"
+  >
+    {
+      type === "external" && (
+        <DiagonalArrow
+          width={12}
+          height={12}
+          class="transform transition-all place-self-start group-hover:translate-x-[0.1875rem] group-hover:-translate-y-0.5"
+        />
+      )
+    }
+    {
+      type === "internal" && (
+        <RightArrow
+          width={16}
+          height={16}
+          class="transform transition-all group-hover:translate-x-1"
+        />
+      )
+    }
+  </div>
 </a>

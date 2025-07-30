@@ -3,29 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import HeadingLink from "../components/HeadingLink.astro";
 import Subtitle from "../components/Subtitle.astro";
+import TechCard from "../components/TechCard.astro";
+
+import Sun from "../assets/sun.svg";
 ---
 
 <BaseLayout pageTitle="Michael Mandic">
   <Subtitle
-    class="text-green-5 dark:text-green-3"
+    class="text-green-5 dark:text-green-2"
     text="Software engineer based in Belgrade, citizen of Serbia and the EU"
   />
   <div class="flex flex-wrap gap-6 mb-6">
-    <Link
-      href="mailto:mihajlomandic27@gmail.com"
-      text="Email"
-      target="_blank"
-    />
-    <Link
-      href="https://www.linkedin.com/in/michael-mandic/"
-      text="LinkedIn"
-      target="_blank"
-    />
-    <Link
-      href="https://github.com/michaelmandic"
-      text="GitHub"
-      target="_blank"
-    />
+    <Link href="mailto:mihajlomandic27@gmail.com" text="Email" />
+    <Link href="https://www.linkedin.com/in/michael-mandic/" text="LinkedIn" />
+    <Link href="https://github.com/michaelmandic" text="GitHub" />
   </div>
   <p class="paragraph">
     Hi, I'm Michael Mandic, a software engineering student @ University of
@@ -36,7 +27,64 @@ import Subtitle from "../components/Subtitle.astro";
   <h2 id="skills-and-tech-stack" class="group">
     <HeadingLink idName="skills-and-tech-stack" />Skills & Tech Stack
   </h2>
-  <p class="paragraph">Under construction.</p>
+  <ul class="flex gap-2 flex-wrap">
+    <TechCard
+      iconName="python"
+      title="Python"
+      description="Programming language"
+    />
+    <TechCard
+      iconName="javascript"
+      title="JavaScript"
+      description="Programming language"
+    />
+    <TechCard iconName="html5" title="HTML" description="Markup language" />
+    <TechCard iconName="css" title="CSS" description="Styling language" />
+    <TechCard iconName="c" title="C" description="Programming language" />
+    <TechCard
+      iconName="cplusplus"
+      title="C++"
+      description="Programming language"
+    />
+    <TechCard
+      iconName="tailwindcss"
+      title="TailwindCSS"
+      description="CSS framework"
+    />
+    <TechCard iconName="astro" title="Astro" description="Web framework" />
+    <TechCard iconName="git" title="Git" description="Version control" />
+    <TechCard iconName="linux" title="Linux" description="OS" />
+    <TechCard title="VS Code" description="IDE">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+      >
+        <g fill="none">
+          <g fill="currentColor" clip-path="url(#akarIconsVscodeFill0)">
+            <path
+              d="M.228 8.37s-.584-.427.117-.995L1.98 5.897s.467-.497.962-.064l15.081 11.542v5.534s-.007.87-1.11.774z"
+            ></path>
+            <path
+              d="M4.116 11.937L.228 15.509s-.4.3 0 .837l1.805 1.66s.429.465 1.062-.065l4.121-3.158zm6.824.029l7.13-5.502l-.047-5.505s-.305-1.202-1.32-.576L7.216 9.11z"
+            ></path>
+            <path
+              d="M16.912 23.69c.414.428.916.288.916.288l5.556-2.767c.711-.49.611-1.098.611-1.098V3.588c0-.726-.735-.977-.735-.977L18.444.264c-1.052-.657-1.741.119-1.741.119s.886-.645 1.32.576v21.85c0 .15-.032.297-.095.43c-.127.259-.402.5-1.062.4z"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="akarIconsVscodeFill0">
+              <path fill="currentColor" d="M0 0h24v24H0z"></path>
+            </clipPath>
+          </defs>
+        </g>
+      </svg>
+    </TechCard>
+    <TechCard iconName="jetbrains" title="JetBrains" description="IDEs" />
+    <TechCard iconName="figma" title="Figma" description="Design tool" />
+  </ul>
+  </ul>
   <h2 id="get-in-touch" class="group">
     <HeadingLink idName="get-in-touch" />Get in Touch
   </h2>
@@ -45,10 +93,8 @@ import Subtitle from "../components/Subtitle.astro";
       >hi@michaelmandic.com</a
     >, <a href="mailto:mihajlomandic27@gmail.com" class="link"
       >mihajlomandic27@gmail.com</a
-    > or via <a
-      href="https://www.linkedin.com/in/michael-mandic/"
-      class="link"
-      target="_blank">LinkedIn</a
+    > or via <a href="https://www.linkedin.com/in/michael-mandic/" class="link"
+      >LinkedIn</a
     >.
   </p>
 </BaseLayout>

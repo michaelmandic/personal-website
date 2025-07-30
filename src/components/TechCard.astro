@@ -1,0 +1,56 @@
+---
+import * as icons from "simple-icons";
+
+const {
+  iconName,
+  size = 32,
+  title = "Title",
+  description = "Description",
+} = Astro.props;
+
+type SimpleIcon = {
+  hex: string;
+  path: string;
+};
+
+let icon;
+if (iconName) {
+  const iconKey =
+    `si${iconName.charAt(0).toUpperCase()}${iconName.slice(1)}` as keyof typeof icons;
+  icon = icons[iconKey] as SimpleIcon;
+}
+---
+
+<li
+  class="flex bg-green-6/50 border-2 border-green-1/5 rounded-lg md:rounded-xl w-fit py-1 px-2 gap-2 md:py-2 md:px-3 md:gap-3 items-center"
+>
+  <div
+    class="text-green-2 max-w-4 max-h-4 md:max-w-16 md:max-h-16 flex items-center justify-center"
+  >
+    {
+      icon ? (
+        <svg
+          class=""
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+        >
+          <title>{title}</title>
+          <path d={icon.path} />
+        </svg>
+      ) : (
+        <slot />
+      )
+    }
+  </div>
+
+  <div class="flex flex-col">
+    <span class="description text-[0.5rem] md:text-xs text-green-2/75 leading-3"
+      >{description}</span
+    >
+    <span class="title text-xs md:text-lg">{title}</span>
+  </div>
+</li>
